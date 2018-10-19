@@ -3,6 +3,7 @@
 
 import apkInstaller
 import os
+import configParse
 import uiautomator2 as u2
 
 
@@ -17,9 +18,9 @@ def server_start():
 
 def __connect_devices():
     global conns
-    devices = apkInstaller.get_devices()
-    for device in devices:
-        conns.append(u2.connect(device))
+    ips = configParse.get_devices_ip()
+    for ip in ips:
+        conns.append(u2.connect(ip))
 
 
 def get_connections():
@@ -29,6 +30,6 @@ def get_connections():
 
 
 def init():
-    apkInstaller.install_apk_on_all_devices()
     server_start()
     get_connections()
+    apkInstaller.install_apk_on_all_devices(True)

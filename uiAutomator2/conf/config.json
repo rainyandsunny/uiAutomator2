@@ -1,4 +1,7 @@
 {
-  "apkPath": "./apk/qianjie.apk",
-  "packageName": "com.hzdg.qianjie"
+  "apkPath": "http://172.90.14.218:8080/apk/qianjie.apk",
+  "packageName": "com.hzdg.qianjie",
+  "deviceIp":[
+     "172.90.15.216"
+  ]
 }
